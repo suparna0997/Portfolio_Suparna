@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<title>Data Analytics Project</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+.responsive {
+  width: 100%;
+  height: auto;
+}
+.right-responsive {
+  float: right;
+  width: 50%%;
+  padding: 5px;
+  max-height:200px
+}
+.left-responsive {
+  float: left;
+  width: 50%%;
+  padding: 5px;
+  max-height:200px
+}
+</style>
+<body>
+
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h1 class="w3-xxxlarge w3-animate-bottom">NGO Insights</h1>
+    <div class="w3-padding-32">
+      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" onclick="window.open('https://public.tableau.com/app/profile/suparna.shetty/viz/NGO_Insights/Dashboard1')" style="font-weight:900;">Tableau Dashboard</button>
+    </div>
+  </div>
+</header>
+
+<!-- Modal -->
+
+
+<div class="w3-row-padding w3-center w3-margin-top">
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Objective</h3><br>
+  <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p>As a part of a probono initiative an NGO sent over their village survey data in order to identify the best way to help people. Through this project I aim at identifying some of the major issues 
+  base on the current database and recommending possible rallies to be conducted accordingly</p>
+  
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>Technologies Used</h3><br>
+  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p>R programming</p>
+  <p>Tableau</p>
+  <p>Excel</p>
+  </div>
+</div>
+
+<div class="w3-third">
+  <div class="w3-card w3-container" style="min-height:460px">
+  <h3>High level process followed</h3><br>
+  <i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
+  <p>Translation of data to english</p>
+  <p>Data cleaning and preprocessing</p>
+  <p>Exploratory data analysis using R</p>
+  <p>Visualisation through Tableau Dashboard</p>
+  </div>
+</div>
+</div>
+
+<div class="w3-container">
+<hr>
+
+     
+<div class="w3-center">
+  <h2>Analysis & Recommendations</h2>
+  <p>Please find below the process used to analyze the dataset. All graphs have been created on R</p>
+</div>   
+
+<header class="w3-container w3-blue-grey">
+<h2></h2>
+</header>
+
+<div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"></span>
+  <h2>Data Cleaning & Preprocessing</h2><hr>
+  <p>The data received was a combination of both English and Marathi hence the first step was translation to English for easier insights. This was done using the GOOGLETRANSLATE() function.</p>
+  <p>Followed by this the xlsx data was pulled in R where some basic cleaning functions were performed such as converting BLANKS/NA's to 0, removing duplicates at all levels, 
+splitting comma separated column data into multiple columns to cover all values, different data manipulation techniques to improve readability etc  </p>
+  <p><i><b>Packages Used:-</b> openxlsx, readxl, dplyr, rmarkdown, stringr, splitstackshape, tidyr, data.table, writexl etc</p></i></div>
+  
+  <div class="w3-padding w3-light-grey w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"></span>
+  <h2>Exploratory Data Analysis</h2>
+  <p>Now that the data has been cleaned and is now in a readable format, the next step was to derive insights. Please find insights below based on which potential rally ideas have been suggested.</p>
+  
+  <p><i><b>Packages Used:-</b> ggplot2, plotly, validate, scales and other packages mentioned above</p></i></div>
+  
+
+
+<button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align" width=80%>Identifying areas which do not receive ration</button>
+
+<div id="Demo1" class="w3-hide">
+  <div class="w3-container">
+  <h2>Background</h2>
+  <p> There are three types of ration cards in India namely white, yellow and orange:-</p>
+  <p><ul style="list-style-type:circle;">
+  <li><b>Yellow Ration Cards: </b>Yellow colour ration cards are issued only to families who fall under the Below Poverty Line (BPL) category.</li>
+  <li><b>Orange Ration Cards: </b>Families with a yearly income of more than Rs. 15,000 and less than 1 lakh can apply for the saffron/orange smart ration card.</li>
+  <li><b>White Ration Cards: </b>Families with an annual income of Rs. 1 Lakh or above can apply for white smart ration cards.</li>
+</ul>  </p>
+<hr>
+<h2>Analysis done</h2>
+<p>As shown below The first step was trying to understand the overall dstribution of household by ther their ration colour.<br>
+<font size="2"><i><b>Findings: </b>Here we found that most of the household have yellow or orange ration cards</p></i></font>
+<p>The next step was trying to understand if all of the households within these 2 categories receive ration since they fall in the low income category<br>
+<font size="2"><i><b>Findings: </b>While most do receive their ration which is positive we would like to understand which states/districts donot receive their ration</p></i></font>
+<img src="C:\Users\ss21418\Desktop\Personal project\Website for project\Photos\ration_dist_flow.png" alt="Nature" class="responsive">
+<p> We see from the charts below that Maharashtra is the state with the highest number of households and within this Pune is the city where the problem is prevalant<p>
+<img src="C:\Users\ss21418\Desktop\Personal project\Website for project\Photos\state_dist_flow.png" alt="Nature" class="responsive">
+<h2> <i>Thus the first focus of the NGO can be coordinating with the villages in Pune to ensure rationing to all their residents</h2></i>
+
+  </div>
+  </div>
+<button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Identify regions that spend the most on healthcare</button>
+<div id="Demo2" class="w3-hide">
+  <div class="w3-container">
+  
+<hr>
+<h2>Analysis done</h2>
+<p>We used a boxplot to determine the state spending maximum amount on healthcare<br>
+<font size="2"><i><b>Findings: </b>Maharashtra has a large number of outliers that spend more than 2,500 rupees per month on healthcare</i></font></p><br>
+<img src="C:\Users\ss21418\Desktop\Personal project\Website for project\Photos\box_plot_state.png" alt="Nature" class="responsive" style="max-height:300px; max-width:600px">
+<p>We further drilled down and filtered for households spending greater than or equall to 2,500 rupees in Maharashtra<br>
+
+<font size="2"><i><b>Findings: </b>Here we noticed that while Pune had a few outliers that spend a lot on healthcare, on an overall level Aurangabad has a higher average spent</p></i></font>
+
+<img src="C:\Users\ss21418\Desktop\Personal project\Website for project\Photos\box_plot_district.png" alt="Nature" class="responsive" style="max-height:400px; max-width:800px">
+<p>
+<h2> <i>Thus the NGO can focus on these villages in Aurangabad who spend a large amount on healthcare and in turn should offer some subsidies for the same</h2></i>
+
+  </div>
+  </div>
+<button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Identify regions that lack the presence of washrooms within their house</button>
+<div id="Demo3" class="w3-hide">
+  <div class="w3-container">
+<h2>Analysis</h2>
+<p>We first try to identify the types of houses<br>
+<font size="2"><i><b>Findings: </b>The most durable kind of house involves a complete cement slab. However the least percentage of houses seem to fall in this category
+</p></i></font>
+<p>The next step was trying to understand if most of the houses with no washrooms fall under the mud and metal sheet houses which is the weakest kind of house<br>
+<font size="2"><i><b>Findings: </b>As expected those with houses made out of mud or metal sheets have almost a 50-50 distribution between those with their own toilets and those who do not. Comparing this ratio also lets us know that in case of houses completely made of cement which is the strongest also tend to have their own washrooms.
+Thus we can focus on those who do not have washrooms in the metal sheet and mud and metal category
+</p></i></font>
+<img src="C:\Users\ss21418\Desktop\Personal project\Website for project\Photos\house_type_toilet.png" alt="Nature" class="responsive">
+<p> We see from the charts below that maharashtra is the state with the highest number of households without a toilet and within this Pune is the city where the problem is prevalant<p>
+<img src="C:\Users\ss21418\Desktop\Personal project\Website for project\Photos\state_dist_house.png" alt="Nature" class="responsive">
+<h2> <i>Thus the first focus of the NGO can be coordinating with the villages in Pune to ensure construction of proper washrooms thus ensuring better hygiene</h2></i>
+
+  </div>
+  </div>
+  <div class="w3-padding w3-white w3-display-container">
+  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"></span>
+  <h2>Dashboard Creation</h2><hr>
+  <p>Once done with basic exploratory data analysis, the next step was creating a dashboard on Tableau to summarize different factors such as housing, rent, income etc</p>
+  <p>The drop down above the map of india enables us to filter on both state and district to find all metrics in a particular location. Click <a href='https://public.tableau.com/app/profile/suparna.shetty/viz/NGO_Insights/Dashboard1'>here</a> to view the dashboard</p>
+  
+<footer class="w3-container w3-blue-grey">
+  <h5></h5>
+  <p class="w3-opacity"></p>
+</footer>
+
+
+</div>
+
+</div>
+
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+  <h3>Footer</h3>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Tabs
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-dark-grey";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Accordions
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Slideshows
+var slideIndex = 1;
+
+function plusDivs(n) {
+  slideIndex = slideIndex + n;
+  showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
