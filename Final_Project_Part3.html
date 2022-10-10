@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<title>Final Project Part 2</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+  #customers {
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: black;
+  color: white;
+}
+.responsive {
+  width: 80%;
+  height: auto;
+}
+.right-responsive {
+  float: right;
+  width: 50%%;
+  padding: 5px;
+  max-height:200px
+}
+.left-responsive {
+  float: left;
+  width: 50%%;
+  padding: 5px;
+  max-height:200px
+}
+</style>
+<body>
+
+
+<!-- Header -->
+<header class="w3-container w3-theme w3-padding" id="myHeader">
+  <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
+  <div class="w3-center">
+  <h1 class="w3-xxxlarge w3-animate-bottom">The Non Tech Road to Getting Rich!</h1>
+  </div>
+</header>
+
+<!-- Modal -->
+
+
+<center>
+<div class="w3-container" style="max-width:1400px">
+<hr>
+
+
+     
+<div class="w3-center">
+  <h2>Audience </h2>
+  <p> Since my storyboard in Part 2 my audience more or less remains the same. I want to continue focusing on 2 segments that is students who want to pursue non 
+    technical degrees but are afraid to do so since they fear unemployement. My second segment would be parents who would see the different success strories 
+    portrayed in the article and would be more supportive of their childrens decision to pursue alternate careers. 
+  My intention behind posting comparision charts was also to show that there is not a lot of difference in the salaries earned in technical and non technical jobs 
+  and that students should be confident in their skillset as they can earn as much or in some cases even more than their technical peers. Initially, I also consiidered 
+  adding a segment of audience that focuses on technical employees who want to switch to more non technical careers but decided it might not be the right fit since people 
+  with more years of work experience would have different definitions of what a good salary is and the analysis currently does not conver all these caveats.</p>
+  
+ <br>
+  </div>
+  <div class="w3-center">
+  <h2>Approach to identifying representative individuals to interview </h2>
+  <p> I wanted to understand my final story board better from a technical, data viz and layman perspective. So I interviewed one from each category. I interviewed 
+    a student pursuing a technical masters program at Carnegie Mellon university in order to understand his perspective on how the website renders to a user and if I can 
+    make any changes in terms of presenting my blog. I then asked a data visualization expert in order to garner her perspective on how I can improve my charts. Finally, 
+    I asked a friend who did not have any technical knowledge in order to understand if she would enjoy reading it as an outsider and if the topic is interesting enough</p>
+  
+ <br>
+  </div>
+  <hr>
+  
+  <div class="w3-center">
+  <h2>Storyboard </h2>
+  <p><script src="https://carnegiemellon.shorthandstories.com/the-non-tech-road-to-get-rich-suparna/embed.js"></script></p>
+  
+ <br>
+  </div>   
+  <hr>
+  
+  
+  
+  <div class="w3-center">
+  
+      <br>
+      <b><h2><a href="https://suparna0997.github.io/Portfolio_Suparna/" style="color:blue">Back to Portfolio</a></h2></b>
+     </div> 
+  
+<header class="w3-container w3-blue-grey">
+<h2></h2>
+</header>
+
+<footer class="w3-container w3-blue-grey">
+  <h5></h5>
+  <p class="w3-opacity"></p>
+</footer>
+
+
+</div>
+
+</div>
+  
+<br>
+
+<!-- Footer -->
+<footer class="w3-container w3-theme-dark w3-padding-16">
+  <h3></h3>
+  <div style="position:relative;bottom:55px;" class="w3-tooltip w3-right">
+    <span class="w3-text w3-theme-light w3-padding">Go To Top</span>    
+    <a class="w3-text-white" href="#myHeader"><span class="w3-xlarge">
+    <i class="fa fa-chevron-circle-up"></i></span></a>
+  </div>
+</footer>
+</center>
+<!-- Script for Sidebar, Tabs, Accordions, Progress bars and slideshows -->
+<script>
+// Side navigation
+function w3_open() {
+  var x = document.getElementById("mySidebar");
+  x.style.width = "100%";
+  x.style.fontSize = "40px";
+  x.style.paddingTop = "10%";
+  x.style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+// Tabs
+function openCity(evt, cityName) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  var activebtn = document.getElementsByClassName("testbtn");
+  for (i = 0; i < x.length; i++) {
+    activebtn[i].className = activebtn[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " w3-dark-grey";
+}
+
+var mybtn = document.getElementsByClassName("testbtn")[0];
+mybtn.click();
+
+// Accordions
+function myAccFunc(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Slideshows
+var slideIndex = 1;
+
+function plusDivs(n) {
+  slideIndex = slideIndex + n;
+  showDivs(slideIndex);
+}
+
+function showDivs(n) {
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+
+showDivs(1);
+
+// Progress Bars
+function move() {
+  var elem = document.getElementById("myBar");   
+  var width = 5;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width == 100) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+
+</body>
+</html>
