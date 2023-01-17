@@ -87,10 +87,16 @@
 <h2></h2>
 </header>
 
-<div class="w3-padding w3-white w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"></span>
-  <h2>Data Cleaning and Exploratory Data Analysis</h2><hr>
-  <p><b>Data Cleaning</b><br>This state consists of cleaning and preprocessing data in order to prepare it for modeling
+
+  
+
+
+<button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align" width=80%>Data Cleaning and Exploratory Data Analysis</button>
+
+<div id="Demo1" class="w3-hide">
+  <div class="w3-container">
+  <h2>Data Cleaning</h2>
+  <p>This state consists of cleaning and preprocessing data in order to prepare it for modeling
     <ul style="list-style-type:circle;">
         <li>Start by reading the file using read_csv in pandas. Drop any unnecessary columns to focus on important data needed for analysis. 
             Currently columns Id, sentiment score, sentiment confidence and the tweet content were retained.</li>
@@ -109,22 +115,29 @@
         </li>
     </ul>
     </p>
-  <p><b>Basic analysis</b><br>Use a barplot to depict sentiment scores to understand the distribution better. From the graph below, 
+    <h2>Basic analysis</h2>
+  <p>Use a barplot to depict sentiment scores to understand the distribution better. From the graph below, 
     we see maximum concentration of data in the sentiment 3 section. This might result in us being able to predict data with sentiment 3 more accurately  
     <img src="Photos/nlp_photos/sent_graph.png" alt="Nature" class="responsive">
 Outlier detection can be performed using a boxplot. On creating a boxplot using the sentiment confidence column, we note that while there are no apparent outliers, the scores 
 are skewed towards the higher end which means that the confidence in the sentiment score column is pretty high which is a positive thing. Thus the 
 sentiment score would be a good variable to predict future sentiments
 <img src="Photos/nlp_photos/boxplot.png" alt="Nature" class="responsive"></p>
-  <p><i><b>Packages Used:-</b> Pandas, NumPy, Matplotlib</p></i></div>
+  <p><i><b>Packages Used:-</b> Pandas, NumPy, Matplotlib</p></i>
+</div>
   
-  <div class="w3-padding w3-light-grey w3-display-container">
-  <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"></span>
-  <h2>Tokenization & Lemmatization</h2>
-  <p>Tokenization is the process of breaking down text into smaller chunks of data for easier processing. We also need to perform lemmatization in order to reduce 
+  </div>
+<button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align" width=80%>Tokenization & Lemmatization</button>
+<div id="Demo2" class="w3-hide">
+  <div class="w3-container">
+  
+<hr>
+<h2>Tokenization</h2>
+<p>Tokenization is the process of breaking down text into smaller chunks of data for easier processing. We also need to perform lemmatization in order to reduce 
     every word to its base root word. Perform tokenization using the tokenize function of nltk and create a custom Parts of Speech tagger in order to tag values as adjective, verb, noun and adverb 
     and use these tagged values for lemmatization. 
   </p>
+  <h2>Lemmatization</h2>
   <p>In order to perform lemmatization, we use the lemmatizer function in nltk to lemmatize the tokenized dataset. Remove stop words and frequently occurring words that do 
     not add any value to sentiment. Create a list with all lemmatized words. Make 2 arrays one for lemmatized words and other for parts of speech tagging. 
     Create dataframe of lemma and parts of speech. Since we do not have a POS tagging for punctuation we add one called PU
@@ -135,76 +148,47 @@ the dataset
 <img src="Photos/nlp_photos/pos3.png" alt="Nature" class="responsive">
 <img src="Photos/nlp_photos/pos4.png" alt="Nature" class="responsive"></p>
   
-  <p><i><b>Packages Used:-</b> nltk and other packages mentioned above</p></i></div>
-  
-
-
-<button onclick="myAccFunc('Demo1')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align" width=80%>Identifying areas which do not receive ration</button>
-
-<div id="Demo1" class="w3-hide">
-  <div class="w3-container">
-  <h2>Background</h2>
-  <p> There are three types of ration cards in India namely white, yellow and orange:-</p>
-  <p><ul style="list-style-type:circle;">
-  <li><b>Yellow Ration Cards: </b>Yellow colour ration cards are issued only to families who fall under the Below Poverty Line (BPL) category.</li>
-  <li><b>Orange Ration Cards: </b>Families with a yearly income of more than Rs. 15,000 and less than 1 lakh can apply for the saffron/orange smart ration card.</li>
-  <li><b>White Ration Cards: </b>Families with an annual income of Rs. 1 Lakh or above can apply for white smart ration cards.</li>
-</ul>  </p>
-<hr>
-<h2>Analysis done</h2>
-<p>As shown below The first step was trying to understand the overall dstribution of household by ther their ration colour.<br>
-<font size="2"><i><b>Findings: </b>Here we found that most of the household have yellow or orange ration cards</p></i></font>
-<p>The next step was trying to understand if all of the households within these 2 categories receive ration since they fall in the low income category<br>
-<font size="2"><i><b>Findings: </b>While most do receive their ration which is positive we would like to understand which states/districts donot receive their ration</p></i></font>
-<img src="Photos/ration_dist_flow.png" alt="Nature" class="responsive">
-<p> We see from the charts below that Maharashtra is the state with the highest number of households and within this Pune is the city where the problem is prevalant<p>
-<img src="Photos/state_dist_flow.png" alt="Nature" class="responsive">
-<h2> <i>Thus the first focus of the NGO can be coordinating with the villages in Pune to ensure rationing to all their residents</h2></i>
-
+  <p><i><b>Packages Used:-</b> nltk and other packages mentioned above</p></i>
   </div>
   </div>
-<button onclick="myAccFunc('Demo2')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align" width=80%>Identify regions that spend the most on healthcare</button>
-<div id="Demo2" class="w3-hide">
-  <div class="w3-container">
-  
-<hr>
-<h2>Analysis done</h2>
-<p>We used a boxplot to determine the state spending maximum amount on healthcare<br>
-<font size="2"><i><b>Findings: </b>Maharashtra has a large number of outliers that spend more than 2,500 rupees per month on healthcare</i></font></p><br>
-<img src="Photos/box_plot_state.png" alt="Nature" class="responsive" style="max-height:300px; max-width:600px">
-<p>We further drilled down and filtered for households spending greater than or equall to 2,500 rupees in Maharashtra<br>
-
-<font size="2"><i><b>Findings: </b>Here we noticed that while Pune had a few outliers that spend a lot on healthcare, on an overall level Aurangabad has a higher average spent</p></i></font>
-
-<img src="Photos/box_plot_district.png" alt="Nature" class="responsive" style="max-height:400px; max-width:800px">
-<p>
-<h2> <i>Thus the NGO can focus on these villages in Aurangabad who spend a large amount on healthcare and in turn should offer some subsidies for the same</h2></i>
-
-  </div>
-  </div>
-<button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Identify regions that lack the presence of washrooms <br>within their house</button>
+<button onclick="myAccFunc('Demo3')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Classification </button>
 <div id="Demo3" class="w3-hide">
   <div class="w3-container">
-<h2>Analysis</h2>
-<p>We first try to identify the types of houses<br>
-<font size="2"><i><b>Findings: </b>The most durable kind of house involves a complete cement slab. However the least percentage of houses seem to fall in this category
-</p></i></font>
-<p>The next step was trying to understand if most of the houses with no washrooms fall under the mud and metal sheet houses which is the weakest kind of house<br>
-<font size="2"><i><b>Findings: </b>As expected those with houses made out of mud or metal sheets have almost a 50-50 distribution between those with their own toilets and those who do not. Comparing this ratio also lets us know that in case of houses completely made of cement which is the strongest also tend to have their own washrooms.
-Thus we can focus on those who do not have washrooms in the metal sheet and mud and metal category
-</p></i></font>
-<img src="Photos/house_type_toilet.png" alt="Nature" class="responsive">
-<p> We see from the charts below that maharashtra is the state with the highest number of households without a toilet and within this Pune is the city where the problem is prevalant<p>
-<img src="Photos/state_dist_house.png" alt="Nature" class="responsive">
-<h2> <i>Thus the first focus of the NGO can be coordinating with the villages in Pune to ensure construction of proper washrooms thus ensuring better hygiene</h2></i>
-
+<p>In this stage we perform supervised classification on the twitter dataset in order to be able to predict accurate sentiments. The first step would be to detokenize the 
+    twitter data. We then split our dataset into training and testing data. Our next step would be vectorizing text reviews to a numerical format since classification cannot 
+    be performed on textual data. Finally, we perform classification using Multinomial Naive Bayes Classifier which produces an accuracy of <b>61.26%</b>
+</p>
+<p>Now that we have our model ready, we want to find the top 10 words for each sentiment class in order to judge if our model gives meaningful results. For this we 
+    will use the feature_log_prob_ function of sklearn to find feature importance 
+    <img src="Photos/nlp_photos/sent.png" alt="Nature" class="responsive"></p>
+<p><i><b>Packages Used:-</b> sklearn and other packages mentioned above</p></i>
+  </div>
+  </div>
+  <button onclick="myAccFunc('Demo4')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Model Evaluation </button>
+<div id="Demo4" class="w3-hide">
+  <div class="w3-container">
+<p>As seen above, the accuracy of our Naive Baye's Classifier is <b>61.26%</b>. We then test our predictions using random test statements as shown below.
+    <img src="Photos/nlp_photos/predict.png" alt="Nature" class="responsive"><br>
+    From the above scores we see that negetive words like skeptical are being given a low sentiment score while positive words like excited have a high sentiment score. 
+    We would however assume that a word like "worst" would have a very low sentiment which is not the case. This is probably due to the lower accuracy 
+    of the model or the large numbet of records under score 3 as shown in the EDA above
+</p>
+<p> We use a confusion matrix to understand the performance of the model against each score. 
+    The confusion matrix below shows the correlation between the actual and predicted values. 
+    As shown above max correlation can be observed for sentiment score 2. Which means the accuracy for tweets with a sentiment score of 2 is the highest. This is a little 
+    unexpected since as per our analysis, the distribution of sentiment score 3 was the highest.
+    <img src="Photos/nlp_photos/conf.png" alt="Nature" class="responsive"></p>
+    <h2>Potential Methodologies to Improve Model Performance</h2>
+    <p>A major issue in our model is that the accuracy is pretty low around 61.49%. 
+        We can improve our model by changing the way our bag of words is created. Currently it is created using the CountVectorizer method which counts the occurence 
+        of the words in the text. A word that appears frequently becomes more important for classification. 
+        To overcome this problem we can use TF-IDF, which considers the product of term frequency and inverse document frequency. 
+        If a term appears n times in a document with w words term frequency would be n/w. We can also try different models such as a Linear Support Vector Classifier</p>
+        <p>On implementing TFIdfVectorizer followed by Linear Support Vector Classifier we noticed the accuracy increase to <b>62%</b></p>
   </div>
   </div>
   <div class="w3-padding w3-white w3-display-container">
   <span onclick="this.parentElement.style.display='none'" class="w3-button w3-display-topright"></span>
-  <h2>Dashboard Creation</h2><hr>
-  <p>Once done with basic exploratory data analysis, the next step was creating a dashboard on Tableau to summarize different factors such as housing, rent, income etc</p>
-  <p>The drop down above the map of india enables us to filter on both state and district to find all metrics in a particular location. Click <a href='https://public.tableau.com/app/profile/suparna.shetty/viz/NGO_Insights/Dashboard1'>here</a> to view the dashboard</p>
   
 <footer class="w3-container w3-blue-grey">
   <h5></h5>
