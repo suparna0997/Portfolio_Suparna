@@ -32,6 +32,7 @@
   <i onclick="w3_open()" class="fa fa-bars w3-xlarge w3-button w3-theme"></i> 
   <div class="w3-center">
   <h1 class="w3-xxxlarge w3-animate-bottom">Sentiment Analysis using Twitter reviews</h1>
+  <h2>Contact for code</h2>
   </div>
 </header>
 
@@ -117,12 +118,12 @@
     </p>
     <h2>Basic analysis</h2>
   <p>Use a barplot to depict sentiment scores to understand the distribution better. From the graph below, 
-    we see maximum concentration of data in the sentiment 3 section. This might result in us being able to predict data with sentiment 3 more accurately  
-    <img src="Photos/nlp_photos/sent_graph.png" alt="Nature" class="responsive">
+    we see maximum concentration of data in the sentiment 3 section. This might result in us being able to predict data with sentiment 3 more accurately.<br>
+    <img src="Photos/nlp_photos/sent_graph.png" alt="Nature" class="responsive" style="max-width: 1000px;max-height: 600px;">
 Outlier detection can be performed using a boxplot. On creating a boxplot using the sentiment confidence column, we note that while there are no apparent outliers, the scores 
 are skewed towards the higher end which means that the confidence in the sentiment score column is pretty high which is a positive thing. Thus the 
-sentiment score would be a good variable to predict future sentiments
-<img src="Photos/nlp_photos/boxplot.png" alt="Nature" class="responsive"></p>
+sentiment score would be a good variable to predict future sentiments. <br>
+<img src="Photos/nlp_photos/boxplot.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 400px;"></p>
   <p><i><b>Packages Used:-</b> Pandas, NumPy, Matplotlib</p></i>
 </div>
   
@@ -140,13 +141,13 @@ sentiment score would be a good variable to predict future sentiments
   <h2>Lemmatization</h2>
   <p>In order to perform lemmatization, we use the lemmatizer function in nltk to lemmatize the tokenized dataset. Remove stop words and frequently occurring words that do 
     not add any value to sentiment. Create a list with all lemmatized words. Make 2 arrays one for lemmatized words and other for parts of speech tagging. 
-    Create dataframe of lemma and parts of speech. Since we do not have a POS tagging for punctuation we add one called PU
-    <img src="Photos/nlp_photos/pos1.png" alt="Nature" class="responsive">
+    Create dataframe of lemma and parts of speech. Since we do not have a POS tagging for punctuation we add one called PU. <br>
+    <img src="Photos/nlp_photos/pos1.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 1000px;">
     To find overall commonly occuring words we apply a filter of greater than 1000 occurences. We then find the most commonly occuring nouns, adjectives and punctuations in 
-the dataset
-<img src="Photos/nlp_photos/pos2.png" alt="Nature" class="responsive">
-<img src="Photos/nlp_photos/pos3.png" alt="Nature" class="responsive">
-<img src="Photos/nlp_photos/pos4.png" alt="Nature" class="responsive"></p>
+the dataset<br>
+<img src="Photos/nlp_photos/pos2.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 1000px;">
+<img src="Photos/nlp_photos/pos3.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 1000px;">
+<img src="Photos/nlp_photos/pos4.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 1000px;"></p>
   
   <p><i><b>Packages Used:-</b> nltk and other packages mentioned above</p></i>
   </div>
@@ -160,13 +161,14 @@ the dataset
 </p>
 <p>Now that we have our model ready, we want to find the top 10 words for each sentiment class in order to judge if our model gives meaningful results. For this we 
     will use the feature_log_prob_ function of sklearn to find feature importance 
-    <img src="Photos/nlp_photos/sent.png" alt="Nature" class="responsive"></p>
+    <img src="Photos/nlp_photos/sent.png" alt="Nature" class="responsive" style="max-width: 1000px;max-height: 400px;"></p>
 <p><i><b>Packages Used:-</b> sklearn and other packages mentioned above</p></i>
   </div>
   </div>
-  <button onclick="myAccFunc('Demo4')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Model Evaluation </button>
+  <button onclick="myAccFunc('Demo4')" class="w3-padding-16 w3-theme w3-button w3-block w3-left-align">Model Evaluation & Improvement Strategies</button>
 <div id="Demo4" class="w3-hide">
   <div class="w3-container">
+    <h2>Model Evaluation</h2>
 <p>As seen above, the accuracy of our Naive Baye's Classifier is <b>61.26%</b>. We then test our predictions using random test statements as shown below.
     <img src="Photos/nlp_photos/predict.png" alt="Nature" class="responsive"><br>
     From the above scores we see that negetive words like skeptical are being given a low sentiment score while positive words like excited have a high sentiment score. 
@@ -176,8 +178,8 @@ the dataset
 <p> We use a confusion matrix to understand the performance of the model against each score. 
     The confusion matrix below shows the correlation between the actual and predicted values. 
     As shown above max correlation can be observed for sentiment score 2. Which means the accuracy for tweets with a sentiment score of 2 is the highest. This is a little 
-    unexpected since as per our analysis, the distribution of sentiment score 3 was the highest.
-    <img src="Photos/nlp_photos/conf.png" alt="Nature" class="responsive" style="max-width: 300px;max-height: 300px;"></p>
+    unexpected since as per our analysis, the distribution of sentiment score 3 was the highest.<br>
+    <img src="Photos/nlp_photos/conf.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 400px;"></p>
     <h2>Potential Methodologies to Improve Model Performance</h2>
     <p>A major issue in our model is that the accuracy is pretty low around 61.49%. 
         We can improve our model by changing the way our bag of words is created. Currently it is created using the CountVectorizer method which counts the occurence 
