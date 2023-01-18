@@ -122,8 +122,8 @@
     <center><img src="Photos/nlp_photos/sent_graph.png" alt="Nature" class="responsive" style="max-width: 700px;max-height: 600px;"></center><br>
 Outlier detection can be performed using a boxplot. On creating a boxplot using the sentiment confidence column, we note that while there are no apparent outliers, the scores 
 are skewed towards the higher end which means that the confidence in the sentiment score column is pretty high which is a positive thing. Thus the 
-sentiment score would be a good variable to predict future sentiments. <br>
-<centre><img src="Photos/nlp_photos/boxplot.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 400px;"></centre></p>
+sentiment score would be a good variable to predict future sentiments. <br><br>
+<center><img src="Photos/nlp_photos/boxplot.png" alt="Nature" class="responsive" style="max-width: 600px;max-height: 600px;"></center></p>
   <p><i><b>Packages Used:-</b> Pandas, NumPy, Matplotlib</p></i>
 </div>
   
@@ -141,13 +141,13 @@ sentiment score would be a good variable to predict future sentiments. <br>
   <h2>Lemmatization</h2>
   <p>In order to perform lemmatization, we use the lemmatizer function in nltk to lemmatize the tokenized dataset. Remove stop words and frequently occurring words that do 
     not add any value to sentiment. Create a list with all lemmatized words. Make 2 arrays one for lemmatized words and other for parts of speech tagging. 
-    Create dataframe of lemma and parts of speech. Since we do not have a POS tagging for punctuation we add one called PU. <br>
-    <centre><img src="Photos/nlp_photos/pos1.png" alt="Nature" class="responsive" style="max-width: 300px;max-height: 800px;"></centre><br><br>
+    Create dataframe of lemma and parts of speech. Since we do not have a POS tagging for punctuation we add one called PU. <br><br>
+    <center><img src="Photos/nlp_photos/pos1.png" alt="Nature" class="responsive" style="max-width: 300px;max-height: 800px;"></center><br><br>
     To find overall commonly occuring words we apply a filter of greater than 1000 occurences. We then find the most commonly occuring nouns, adjectives and punctuations in 
-the dataset<br>
+the dataset<br><br><center>
 <img src="Photos/nlp_photos/pos2.png" alt="Nature" class="responsive" style="max-width: 300px;max-height: 800px;">
 <img src="Photos/nlp_photos/pos3.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 1000px;">
-<img src="Photos/nlp_photos/pos4.png" alt="Nature" class="responsive" style="max-width: 300px;max-height: 1000px;"></p>
+<img src="Photos/nlp_photos/pos4.png" alt="Nature" class="responsive" style="max-width: 300px;max-height: 1000px;"></center></p>
   
   <p><i><b>Packages Used:-</b> nltk and other packages mentioned above</p></i>
   </div>
@@ -161,7 +161,7 @@ the dataset<br>
 </p>
 <p>Now that we have our model ready, we want to find the top 10 words for each sentiment class in order to judge if our model gives meaningful results. For this we 
     will use the feature_log_prob_ function of sklearn to find feature importance <br>
-    <centre><img src="Photos/nlp_photos/sent.png" alt="Nature" class="responsive" style="max-width: 1000px;max-height: 600px;"></centre></p>
+    <center><img src="Photos/nlp_photos/sent.png" alt="Nature" class="responsive" style="max-width: 1000px;max-height: 600px;"></center></p>
 <p><i><b>Packages Used:-</b> sklearn and other packages mentioned above</p></i>
   </div>
   </div>
@@ -179,7 +179,7 @@ the dataset<br>
     The confusion matrix below shows the correlation between the actual and predicted values. 
     As shown above max correlation can be observed for sentiment score 2. Which means the accuracy for tweets with a sentiment score of 2 is the highest. This is a little 
     unexpected since as per our analysis, the distribution of sentiment score 3 was the highest.<br>
-    <img src="Photos/nlp_photos/conf.png" alt="Nature" class="responsive" style="max-width: 400px;max-height: 400px;"></p>
+   <center> <img src="Photos/nlp_photos/conf.png" alt="Nature" class="responsive" style="max-width: 500px;max-height: 500px;"></center></p>
     <h2>Potential Methodologies to Improve Model Performance</h2>
     <p>A major issue in our model is that the accuracy is pretty low around 61.49%. 
         We can improve our model by changing the way our bag of words is created. Currently it is created using the CountVectorizer method which counts the occurence 
